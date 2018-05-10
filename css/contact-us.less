@@ -1,0 +1,163 @@
+@import './style.css';
+@import './base.less';
+@import './mixin.less';
+@imgUrl:'../img/';
+@gray:#707070;
+@blue:#1e4f9c;
+
+.cu-banner{
+	background: url('@{imgUrl}cu-banner.jpg') no-repeat center;
+	height: 505px;
+	.banner-content{
+		padding-top: 195px;
+		h4{
+			color: #ffffff;
+			text-align: center;
+		}
+		p{
+			color: rgba(255,255,255,0.4);
+			text-align: center;
+		}
+	}
+}
+.cu-content{
+	margin: 0 auto;
+	max-width: 1280px;
+	width: 100%;
+	.text-line{
+		position: relative;
+		margin: 95px auto 35px;
+		max-width: 1280px;
+		h2 {
+			font-weight: bold;
+			color: @gray;
+			text-align: center;
+		}
+		i {
+			width: 40%;
+			height: 1px;
+			background: #d1d1d1;
+			position: absolute;
+			top:50%;
+			&:nth-child(1){
+				left: 0;
+			}
+			&:nth-child(2){
+				right: 0;
+			}
+		}
+	}
+	.table{
+		table{
+			text-align: center;
+			tr{
+				th{
+					width: 20%;
+					max-width: 256px;
+					font-weight: bold;
+					text-align: center;
+					border: 1px solid #dcdcdc;
+					background: #eeeeee;
+					color: @gray;
+					height: 70px;
+					&:first-child{
+						color: #ffffff;
+						background: @blue;
+					}
+				}
+				td{
+					font-size: 14px;
+					color: @gray;
+					width: 20%;
+					max-width: 256px;
+					height: 70px;
+					border: 1px solid #dcdcdc;
+				}
+			}
+		}
+	}
+	.map{
+		img{
+			width: 100%;
+		}
+	}
+	.icon-box{
+		width: 100%;
+		max-width: 1100px;
+		margin: 0 auto;
+		height: 350px;
+		.icon{
+			float: left;
+			width: 25%;
+			max-width: 275px;
+			text-align: center;
+			&:hover{
+				span{
+					img{
+						.scale(1.1);
+					}
+				}
+			}
+			span{
+				width: 118px;
+				height: 118px;
+				line-height: 118px;
+				display: inline-block;
+				border-radius: 50%;
+				background-color: #b2d5ed;
+				margin: 40px auto 20px;
+				img{
+					vertical-align: middle;
+					max-width: 118px;
+					.trans(1s);
+				}
+			}
+			h4{
+				color: @blue;
+				font-weight: bold;
+				margin-bottom: 15px;
+			}
+			p{
+				color: @gray;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1440px){
+}
+
+@media screen and (max-width: 1024px){
+
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+
+}
+
+@media screen and (max-width: 767px){
+	.cu-content{
+		.text-line{
+			i{
+				width: 25%;
+			}
+		}
+		.table {
+			table {
+				text-align: center;
+				tr {
+					td {
+						height: 140px;
+					}
+				}
+			}
+		}
+		.icon-box{
+			height: inherit;
+			margin-bottom: 50px;
+			.icon{
+				width: 50%;
+			}
+		}
+	}
+}

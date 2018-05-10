@@ -1,0 +1,234 @@
+@import './style.css';
+@import './base.less';
+@import './mixin.less';
+
+@imgUrl: '../img/';
+@gray: #707070;
+
+.cc-banner {
+  text-align: center;
+  background: url('@{imgUrl}cc-banner.jpg') no-repeat center;
+  .banner-content {
+    width: 100%;
+    max-width: 1280px;
+    max-height: 700px;
+    margin: 0 auto;
+    padding: 135px 0 45px;
+    ul {
+      li {
+        float: left;
+        width: 50%;
+        max-width: 640px;
+        margin-bottom: 95px;
+        span {
+          display: block;
+          margin: 0 auto 30px;
+          width: 60px;
+          position: relative;
+          top: 20px;
+          opacity: 0;
+          visibility: hidden;
+          img {
+            width: 100%;
+          }
+        }
+        h4 {
+          color: #ffffff;
+          position: relative;
+          top: 20px;
+          opacity: 0;
+          visibility: hidden;
+        }
+        p {
+          color: #ffffff;
+          max-width: 300px;
+          margin: 0 auto;
+          position: relative;
+          top: 20px;
+          opacity: 0;
+          visibility: hidden;
+        }
+        &:nth-child(1){
+          span,h4,p{
+            .transDelay(1s,0s);
+          }
+        }
+        &:nth-child(2){
+          span,h4,p{
+            .transDelay(1s,.5s);
+          }
+        }
+        &:nth-child(3){
+          span,h4,p{
+            .transDelay(1s,1s);
+          }
+        }
+        &:nth-child(4){
+          span,h4,p{
+            .transDelay(1s,1.5s);
+          }
+        }
+      }
+      &.active {
+        li {
+          span, h4, p {
+            top: 0;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cc-content {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 90px;
+  .text-line {
+    position: relative;
+    margin-bottom: 55px;
+    h2 {
+      font-weight: bold;
+      color: #707070;
+      text-align: center;
+    }
+    i {
+      width: 40%;
+      height: 1px;
+      background: #d1d1d1;
+      position: absolute;
+      top: 50%;
+      &:nth-child(1) {
+        left: 0;
+      }
+      &:nth-child(2) {
+        right: 0;
+      }
+    }
+  }
+  ul {
+    width: 100%;
+    li {
+      background: url('@{imgUrl}cc-bg.jpg') no-repeat center;
+      width: 50%;
+      max-width: 630px;
+      min-height: 210px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      float: left;
+      color: @gray;
+      position: relative;
+      top: 50px;
+      opacity: 0;
+      visibility: hidden;
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+      &:nth-child(1){
+        .transDelay(1s,0s);
+      }
+      &:nth-child(2){
+        .transDelay(1s,.5s);
+      }
+      &:nth-child(3){
+        .transDelay(1s,1s);
+      }
+      &:nth-child(4){
+        .transDelay(1s,1.5s);
+      }
+      .cc-val {
+        padding: 20px;
+        max-width: 630px;
+        margin: 0 auto;
+        span {
+          float: left;
+          width: 172px;
+          padding: 50px 0;
+          border-right: 1px solid #dcdcdc;
+          text-align: center;
+        }
+        .cc-text {
+          float: left;
+          margin-left: 32px;
+          h2 {
+            font-weight: bold;
+            margin-top: 35px;
+          }
+          h4 {
+            margin-bottom: 5px;
+          }
+          p {
+            color: #aeaeba;
+            max-width: 360px;
+          }
+        }
+      }
+    }
+    &.active{
+      li{
+        top:0;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1024px) {
+  .cc-content {
+    ul {
+      li {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+
+}
+
+@media screen and (max-width: 767px) {
+  .cc-banner {
+    background-size: cover;
+    .banner-content {
+      max-height: inherit;
+      padding: 0px 0 0px;
+      ul {
+        li {
+          width: 100%;
+          margin: 20px auto;
+        }
+      }
+    }
+  }
+
+  .cc-content {
+    .text-line {
+      i {
+        width: 25%;
+      }
+    }
+    ul {
+      li {
+        .cc-val {
+          span {
+            width: 34%;
+          }
+          .cc-text {
+            width: 60%;
+            margin-left: 5%;
+          }
+        }
+      }
+    }
+  }
+}

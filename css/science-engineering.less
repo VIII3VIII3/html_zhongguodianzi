@@ -1,0 +1,393 @@
+@import './style.css';
+@import './base.less';
+@import './mixin.less';
+@imgUrl:'../img/';
+@blue:#1e4f9c;
+@gray:#707070;
+
+.pic-display{
+	background: url('@{imgUrl}clean-energy-bg1.jpg');
+	.bg-center-cover();
+	&.active{
+		.pic-display-in{
+			h6,p{
+				opacity: 1;
+				.trans(1s);
+			}
+			.text-line{
+				h6{
+					left: 0;
+				}
+			}
+			p{
+				right: 0;
+			}
+		}
+	}
+	.pic-display-in{
+		padding: 80px 0 90px;
+		max-width: 1280px;
+		margin: 0 auto;
+		text-align: center;
+		h6,p{
+			position: relative;
+			opacity: 0;
+			color: @gray;
+		}
+		.text-line{
+			position: relative;
+			h6{
+				left: -30px;
+				position: relative;
+				display: inline-block;
+				padding: 0 15px;
+				z-index: 3;
+				font-weight: bold;
+			}
+			i{
+				position: absolute;
+				z-index: 1;
+				width: 35%;
+				height: 1px;
+				background: #d1d1d1; 
+				top: 50%;
+			}
+			i.i-left{
+				left:0;
+			}
+			i.i-right{
+				right:0;
+			}
+		}
+		p{
+			margin-top: 50px;
+			right: -30px;
+		}
+	}
+}
+
+.img-box-all{
+	background: url('@{imgUrl}science-engineering-bg.jpg');
+	.bg-top-center-cover();
+	.img-box-in{
+		max-width: 1440px;
+		margin:0 auto;
+		padding: 90px 0 0;
+		.img-box-list{
+			text-align: center;
+			margin-bottom: 90px;
+			&.last-list{
+				margin-bottom: 0;
+			}
+			h5,span{
+				color: #fff;
+			}
+			h5{
+				font-weight: bold;
+			}
+			span{
+				display: block;
+				margin: 0 auto;
+			}
+			ul{
+				margin-top: 30px;
+				li{
+					position: relative;
+					float: left;
+					width: 33.333%;
+					overflow: hidden;
+					height: 300px;
+					&:hover{
+						img{
+							.scale(1.1);
+						}
+					}
+					img{
+						width: 100%;
+						height: 100%;
+					}
+					h6{
+						position: absolute;
+						left: 5%;
+						bottom: 5%;
+						width: 90%;
+						text-align: left;
+						color: #fff;
+						font-weight: bold;
+						.ellipsis();
+					}
+				}
+			}
+			&:nth-child(2n){
+				margin-bottom: 130px;
+				h5,span{
+					color: @gray;
+				}
+			}
+			&:last-child{
+				position: relative;
+				top: 50px;
+			}
+		}
+	}
+}
+
+.customer{
+	background: url('@{imgUrl}clean-energy-bg1.jpg');
+	.bg-center-cover();
+	.cus-in{
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 100px 0 85px;
+		.text-line{
+			position: relative;
+			text-align: center;
+			margin-bottom: 50px;
+			h6{
+				position: relative;
+				display: inline-block;
+				padding: 0 15px;
+				z-index: 3;
+				font-weight: bold;
+				color: @gray;
+			}
+			i{
+				position: absolute;
+				z-index: 1;
+				width: 35%;
+				height: 1px;
+				background: #d1d1d1; 
+				top: 50%;
+			}
+			i.i-left{
+				left:0;
+			}
+			i.i-right{
+				right:0;
+			}
+		}
+		ul{
+			&>li{
+				table{
+					width: 100%;
+					text-align: center;
+					tr{
+						td{
+							border:1px solid #d1d1d1;
+							height: 150px;
+							width: 14.2%;
+							background: #fff;
+							text-align: center;
+							img{
+								display: inline-block;
+							}
+						}
+					}
+				}
+			}
+		}
+		.bx-wrapper{
+			.bx-prev{
+				background-position: 0 -68px;
+				margin-left: -60px;
+			}
+			.bx-next{
+				background-position: -48px -68px;
+				margin-right: -60px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1440px){
+	.pic-display{
+		.pic-display-in{
+			padding: 40px 0 50px;
+			max-width: 1000px;
+		}
+	}
+	.img-box-all{
+		.img-box-in{
+			max-width: 1000px;
+			padding: 100px 0 0;
+			.img-box-list{
+				ul{
+					li{
+						height: 208px;
+						h6{
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.customer{
+		.cus-in{
+			max-width: 1000px;
+			padding: 100px 0 55px;
+			ul{
+				&>li{
+					table{
+						tr{
+							td{
+								height: 120px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1024px){
+	.pic-display{
+		.pic-display-in{
+			padding: 40px 0 50px;
+			max-width: 800px;
+		}
+	}
+	.img-box-all{
+		.img-box-in{
+			max-width: 800px;
+			padding: 100px 0 0;
+			.img-box-list{
+				ul{
+					li{
+						height: 166px;
+					}
+				}
+			}
+		}
+	}
+	.customer{
+		.cus-in{
+			max-width: 800px;
+			padding: 100px 0 35px;
+			ul{
+				&>li{
+					table{
+						tr{
+							td{
+								height: 114px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+	.pic-display{
+		.pic-display-in{
+			padding: 40px 0 50px;
+			max-width: 700px;
+		}
+	}
+	.img-box-all{
+		.img-box-in{
+			max-width: 700px;
+			padding: 100px 0 0;
+			.img-box-list{
+				ul{
+					li{
+						height: 146px;
+					}
+				}
+			}
+		}
+	}
+	.customer{
+		.cus-in{
+			max-width: 700px;
+			padding: 100px 0 35px;
+			ul{
+				&>li{
+					table{
+						tr{
+							td{
+								height: 100px;
+								img{
+									width: 60%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 767px){
+	.pic-display{
+		.pic-display-in{
+			padding: 20px 0 30px;
+			max-width: 100%;
+			p{
+				width: 80%;
+				margin: 20px auto 0;
+			}
+		}
+	}
+	.img-box-all{
+		background: #fff;
+		.img-box-in{
+			max-width: 100%;
+			padding: 50px 0 0;
+			.img-box-list{
+				margin-bottom: 50px;
+				h5,span{
+					color: @gray;
+				}
+				ul{
+					li{
+						height: auto;
+						float: none;
+						width: 90%;
+						margin: 0 auto;
+					}
+				}
+				&:last-child{
+					top:0;
+				}
+				&:nth-child(2n){
+					margin-bottom: 50px;
+				}
+			}
+		}
+	}
+	.customer{
+		.cus-in{
+			max-width: 100%;
+			padding: 50px 5% 35px;
+			ul{
+				&>li{
+					table{
+						tr{
+							td{
+								height: 50px;
+								.box-sizing();
+								img{
+									vertical-align: middle;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.bx-wrapper .bx-pager.bx-default-pager a{
+	background: none;
+	border:2px solid @gray;
+	border-radius: 100%;
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+ .bx-wrapper .bx-pager.bx-default-pager a.active{
+ 	background: @gray;
+}

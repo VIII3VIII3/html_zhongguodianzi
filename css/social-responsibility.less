@@ -1,0 +1,244 @@
+@import './style.css';
+@import './base.less';
+@import './mixin.less';
+
+@imgUrl: '../img/';
+@gray: #707070;
+@blue: #1e4f9c;
+
+.sr-banner {
+  background: url('@{imgUrl}sr-banner.jpg') no-repeat center;
+  height: 810px;
+  .banner-content {
+    padding-top: 170px;
+    padding-left: 270px;
+    h4 {
+      color: #ffffff;
+      text-align: center;
+    }
+  }
+}
+
+.sr-content {
+  margin: 0 auto;
+  width: 100%;
+  background: #eeeeee;
+  .text-line {
+    position: relative;
+    max-width: 1280px;
+    margin: 100px auto 55px;
+    h2 {
+      font-weight: bold;
+      color: @gray;
+      text-align: center;
+    }
+    i {
+      width: 40%;
+      height: 1px;
+      background: #d1d1d1;
+      position: absolute;
+      top: 50%;
+      &:nth-child(1) {
+        left: 0;
+      }
+      &:nth-child(2) {
+        right: 0;
+      }
+    }
+  }
+  .sr-img {
+    width: 100%;
+    background: #ffffff;
+    padding-bottom: 100px;
+    ul {
+      width: 100%;
+      max-width: 1280px;
+      margin: 100px auto 0;
+      li {
+        width: 50%;
+        float: left;
+        max-width: 630px;
+        margin-right: 20px;
+        position: relative;
+        margin-bottom: 20px;
+        img {
+          width: 100%;
+          max-width: 630px;
+        }
+        p {
+          color: #ffffff;
+          position: absolute;
+          bottom: -27px;
+          left: 30px;
+          font-weight: bold;
+          opacity: 0;
+          .trans(.75s)
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          .trans(.75s);
+          background: rgba(0, 0, 0, 0.4); /* 一些不支持背景渐变的浏览器 */
+          background: -webkit-linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.4) 89%, rgba(0, 0, 0, 0.9) 100%); /* Safari 5.1 - 6.0 */
+          background: -o-linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.4) 89%, rgba(0, 0, 0, 0.9) 100%); /* Opera 11.1 - 12.0 */
+          background: -moz-linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.4) 89%, rgba(0, 0, 0, 0.9) 100%); /* Firefox 3.6 - 15 */
+          background: linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.4) 89%, rgba(0, 0, 0, 0.9) 100%); /* 标准的语法（必须放在最后） */
+        }
+        &:nth-child(even) {
+          margin-right: 0;
+        }
+        &:hover {
+          p {
+            bottom: 25px;
+            opacity: 1;
+          }
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .sr-list {
+    .content-box {
+      .content {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto 60px;
+        .img-box {
+          width: 50%;
+          float: left;
+          position: relative;
+          top: 40px;
+          opacity: 0;
+          visibility: hidden;
+          .trans(1s);
+          img {
+            width: 100%;
+            max-width: 640px;
+          }
+        }
+        article {
+          width: 50%;
+          float: left;
+          position: relative;
+          bottom: 40px;
+          opacity: 0;
+          visibility: hidden;
+          .trans(1s);
+          h2 {
+            color: @gray;
+            font-weight: bold;
+            padding-left: 30px;
+            margin: 105px auto 15px;
+          }
+          p {
+            color: @gray;
+            padding-left: 30px;
+            max-width: 445px;
+          }
+        }
+        &:nth-child(even) {
+          .img-box {
+            float: right;
+          }
+          article {
+            h2, p {
+              text-align: right;
+              padding-left: 0;
+              padding-right: 30px;
+            }
+            p {
+              float: right;
+            }
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+          padding-bottom: 100px;
+        }
+        &.active{
+          .img-box{
+            opacity: 1;
+            visibility: visible;
+            top:0;
+          }
+          article{
+            opacity: 1;
+            visibility: visible;
+            bottom:0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1024px) {
+  .sr-content .sr-img ul li {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .sr-content .sr-list .content-box .content article h2 {
+    margin-top: 50px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  .sr-banner {
+    background-size: cover;
+    height: inherit;
+    .banner-content {
+      padding: 110px 0 50px;
+    }
+  }
+
+  .sr-content {
+    .sr-img {
+      padding-bottom: 0;
+      ul {
+        margin-top: 20px;
+        li {
+          width: 100%;
+          p {
+            padding: 5px;
+            left: 0;
+          }
+        }
+      }
+    }
+    .text-line {
+      margin: 30px auto 20px;
+      i {
+        width: 25%;
+      }
+    }
+    .sr-list{
+      .content-box{
+        .content{
+          .img-box{
+            width: 100%;
+          }
+          article{
+            width: 100%;
+            h2{
+              margin-top: 20px;
+            }
+            p{
+              max-width: 290px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
